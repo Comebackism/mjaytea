@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="mjaytea — ร้านชาพรีเมียมที่คัดสรรใบชาคุณภาพจากทั่วทุกมุมโลก ส่งมอบรสชาติแท้ๆ ถึงมือคุณ">
+  <meta name="keywords" content="ชา, tea, ร้านชา, ชาพรีเมียม, ใบชาคุณภาพ, mjaytea">
+  <title>mjaytea — Premium Tea Experience</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600;700&family=Mitr:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">🍵</div>
+        mjaytea
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">หน้าแรก</a></li>
+        <li><a href="#about">เกี่ยวกับเรา</a></li>
+        <li><a href="#menu">เมนูชา</a></li>
+        <li><a href="#features">ทำไมต้องเรา</a></li>
+        <li><a href="#testimonials">รีวิว</a></li>
+        <li><a href="#contact" class="nav-cta">ติดต่อเรา</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <!-- Decorative blobs -->
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          ☕ <span>ชาพรีเมียม</span> คัดสรรจากทั่วโลก
+        </div>
+
+        <h1>
+          สัมผัสรสชาติ<br>
+          <span class="highlight">ชาแท้ๆ</span> ที่คุณ<br>
+          จะหลงรัก
+        </h1>
+
+        <p class="hero-desc">
+          เราคัดสรรใบชาคุณภาพจากไร่ชาชื่อดังทั่วทุกมุมโลก
+          ส่งตรงถึงมือคุณพร้อมรสชาติที่แท้จริงและความสดใหม่ในทุกแก้ว
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">
+            ดูเมนูชา
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#about" class="btn btn-outline">เรียนรู้เพิ่มเติม</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">50<span>+</span></div>
+            <div class="stat-label">ชาจากทั่วโลก</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">10K<span>+</span></div>
+            <div class="stat-label">ลูกค้าที่ไว้ใจ</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">4.9<span>★</span></div>
+            <div class="stat-label">คะแนนรีวิว</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-wrapper">
+          <img src="images/hero-tea.png" alt="Premium tea by mjaytea" loading="eager">
+        </div>
+
+        <div class="hero-float-card card-1">
+          <div class="float-icon orange">🍃</div>
+          <div class="float-text">
+            <div class="ft-title">ออร์แกนิค 100%</div>
+            <div class="ft-sub">ปลอดสารเคมี</div>
+          </div>
+        </div>
+
+        <div class="hero-float-card card-2">
+          <div class="float-icon green">⭐</div>
+          <div class="float-text">
+            <div class="ft-title">คุณภาพระดับพรีเมียม</div>
+            <div class="ft-sub">คัดสรรอย่างพิถีพิถัน</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-image reveal">
+        <div class="about-img-main">
+          <img src="images/about-tea.png" alt="The art of brewing tea at mjaytea">
+        </div>
+        <div class="about-accent"></div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label reveal">เรื่องราวของเรา</span>
+        <h2 class="section-title reveal">
+          ความรักในชา<br>
+          ที่เริ่มต้นจากใจ
+        </h2>
+        <p class="section-desc reveal">
+          mjaytea เริ่มต้นจากความหลงใหลในรสชาติของชาแท้ๆ
+          เราเดินทางไปยังไร่ชาทั่วโลก เพื่อค้นหาใบชาที่ดีที่สุด
+          และนำมาส่งต่อให้คุณได้สัมผัสประสบการณ์การดื่มชาที่แท้จริง
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature reveal reveal-delay-1">
+            <div class="about-feature-icon">🌿</div>
+            <div class="about-feature-text">
+              <h4>วัตถุดิบธรรมชาติ</h4>
+              <p>ใบชาจากไร่ออร์แกนิคที่ได้รับการรับรองมาตรฐานสากล</p>
+            </div>
+          </div>
+
+          <div class="about-feature reveal reveal-delay-2">
+            <div class="about-feature-icon">🎋</div>
+            <div class="about-feature-text">
+              <h4>กรรมวิธีดั้งเดิม</h4>
+              <p>คัดสรรและผลิตด้วยกรรมวิธีดั้งเดิมเพื่อรักษารสชาติแท้จริง</p>
+            </div>
+          </div>
+
+          <div class="about-feature reveal reveal-delay-3">
+            <div class="about-feature-icon">📦</div>
+            <div class="about-feature-text">
+              <h4>ส่งตรงถึงบ้าน</h4>
+              <p>บรรจุภัณฑ์รักษาความสดใหม่ จัดส่งฟรีทั่วประเทศ</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#menu" class="btn btn-primary reveal reveal-delay-4">
+          สำรวจเมนูของเรา
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header">
+        <span class="section-label reveal">เมนูชาของเรา</span>
+        <h2 class="section-title reveal">ชาคัดสรรพิเศษ</h2>
+        <p class="section-desc reveal">
+          เลือกสรรจากคอลเลกชันชาพรีเมียมที่หลากหลาย
+          ทุกแก้วผ่านการคัดสรรอย่างพิถีพิถันเพื่อคุณ
+        </p>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Card 1 -->
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card-img">
+            <img src="images/tea-collection.png" alt="Oolong Tea">
+            <span class="menu-card-tag">ยอดนิยม</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>ชาอู่หลง ไต้หวัน</h3>
+            <p>ชาอู่หลงเกรดพรีเมียมจากภูเขาอาลีซาน กลิ่นหอมดอกไม้ รสนุ่มละมุน</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿290 <small>/ 100g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card-img">
+            <img src="images/hero-tea.png" alt="Matcha Premium">
+            <span class="menu-card-tag">แนะนำ</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>มัทฉะ เกรด A</h3>
+            <p>มัทฉะเกรดพิธีชงชาจากเมืองอุจิ ญี่ปุ่น รสหวานนุ่ม กลิ่นหอมเข้มข้น</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿450 <small>/ 50g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="menu-card reveal reveal-delay-3">
+          <div class="menu-card-img">
+            <img src="images/tea-shop.png" alt="Earl Grey Special">
+            <span class="menu-card-tag">ใหม่</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>เอิร์ลเกรย์ สเปเชียล</h3>
+            <p>ชาดำผสมน้ำมันเบอร์กาม็อตแท้จากอิตาลี กลิ่นหอมสดชื่น ลงตัวทุกเวลา</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿220 <small>/ 100g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="menu-card reveal reveal-delay-1">
+          <div class="menu-card-img">
+            <img src="images/about-tea.png" alt="Jasmine Green Tea">
+          </div>
+          <div class="menu-card-body">
+            <h3>ชาเขียวมะลิ</h3>
+            <p>ชาเขียวอบกลิ่นดอกมะลิสดจากฝูโจว รสชาติหอมหวาน สดชื่นทุกอณู</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿180 <small>/ 100g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="menu-card reveal reveal-delay-2">
+          <div class="menu-card-img">
+            <img src="images/tea-collection.png" alt="Pu-erh Tea">
+            <span class="menu-card-tag">หายาก</span>
+          </div>
+          <div class="menu-card-body">
+            <h3>ชาผู่เอ๋อร์ บ่ม 10 ปี</h3>
+            <p>ชาผู่เอ๋อร์บ่มนานจากยูนนาน รสนุ่มลึก กลิ่นดินและไม้ ดื่มง่าย</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿680 <small>/ 100g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="menu-card reveal reveal-delay-3">
+          <div class="menu-card-img">
+            <img src="images/hero-tea.png" alt="Chamomile Tea">
+          </div>
+          <div class="menu-card-body">
+            <h3>ชาคาโมมายล์</h3>
+            <p>ดอกคาโมมายล์ออร์แกนิคจากอียิปต์ กลิ่นหอมอ่อนโยน ช่วยผ่อนคลาย</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">฿160 <small>/ 50g</small></div>
+              <button class="menu-add-btn" aria-label="Add to cart">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="features-header">
+        <span class="section-label reveal">ทำไมต้องเลือกเรา</span>
+        <h2 class="section-title reveal">สิ่งที่ทำให้เราแตกต่าง</h2>
+        <p class="section-desc reveal">
+          เรามุ่งมั่นที่จะมอบประสบการณ์การดื่มชาที่ดีที่สุดให้กับคุณ
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <span class="feature-icon-emoji">🌱</span>
+          </div>
+          <h3>ออร์แกนิค 100%</h3>
+          <p>ใบชาทุกชนิดปลูกแบบออร์แกนิค ไม่ใช้สารเคมี ปลอดภัยต่อสุขภาพ</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <span class="feature-icon-emoji">✈️</span>
+          </div>
+          <h3>นำเข้าตรง</h3>
+          <p>นำเข้าจากไร่ชาโดยตรง ไม่ผ่านคนกลาง คุณภาพสูงสุดในราคาที่ยุติธรรม</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <span class="feature-icon-emoji">🏷️</span>
+          </div>
+          <h3>ราคาที่ยุติธรรม</h3>
+          <p>ชาคุณภาพพรีเมียมในราคาที่เข้าถึงได้ คุ้มค่าทุกแก้วที่คุณจิบ</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon">
+            <span class="feature-icon-emoji">🚚</span>
+          </div>
+          <h3>จัดส่งรวดเร็ว</h3>
+          <p>จัดส่งฟรีทั่วประเทศ พร้อมบรรจุภัณฑ์รักษาความสดใหม่ของชา</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-label reveal">รีวิวจากลูกค้า</span>
+        <h2 class="section-title reveal">ลูกค้าพูดถึงเรา</h2>
+        <p class="section-desc reveal">
+          เรื่องราวจากลูกค้าที่ไว้วางใจเลือก mjaytea
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "ชาอู่หลงจากที่นี่หอมมากเลยค่ะ รสชาติแตกต่างจากที่เคยดื่มมาอย่างชัดเจน คุณภาพดีมากๆ จะกลับมาสั่งอีกแน่นอน"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ส</div>
+            <div class="testimonial-info">
+              <div class="t-name">สมหญิง ดีใจ</div>
+              <div class="t-role">ลูกค้าประจำ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "สั่งมัทฉะมาลองครับ ต้องบอกว่าเกินคาดมาก รสชาตินุ่มละมุน ไม่ขม บรรจุภัณฑ์ก็สวย จัดส่งไวมากครับ"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ธ</div>
+            <div class="testimonial-info">
+              <div class="t-name">ธนพล วงศ์ใหญ่</div>
+              <div class="t-role">ลูกค้าใหม่</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "เปิดร้านกาแฟ สั่งชาจาก mjaytea มาเสิร์ฟลูกค้า ทุกคนชมว่าชาหอมและอร่อยมาก ขอบคุณที่มีชาดีๆ แบบนี้ค่ะ"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">น</div>
+            <div class="testimonial-info">
+              <div class="t-name">นภัสสร แก้วใส</div>
+              <div class="t-role">เจ้าของร้านกาแฟ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section" id="contact">
+    <div class="cta-content">
+      <span class="section-label reveal">พร้อมแล้วหรือยัง?</span>
+      <h2 class="reveal">เริ่มต้นประสบการณ์<br>ชาพรีเมียม วันนี้</h2>
+      <p class="reveal">
+        สมัครรับข่าวสารเพื่อรับส่วนลดพิเศษ 15% สำหรับการสั่งซื้อครั้งแรก
+        พร้อมอัปเดตชาใหม่ก่อนใคร
+      </p>
+      <div class="cta-actions reveal">
+        <a href="#" class="btn btn-white">
+          สั่งซื้อเลย
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost">ดูโปรโมชัน</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">🍵</div>
+            mjaytea
+          </a>
+          <p>
+            ร้านชาพรีเมียมที่คัดสรรใบชาคุณภาพ
+            จากไร่ชาชื่อดังทั่วโลก ส่งมอบรสชาติแท้ๆ ถึงมือคุณ
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="Line">L</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>เมนู</h4>
+          <a href="#">ชาอู่หลง</a>
+          <a href="#">มัทฉะ</a>
+          <a href="#">ชาเขียว</a>
+          <a href="#">ชาดำ</a>
+          <a href="#">ชาสมุนไพร</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>เกี่ยวกับ</h4>
+          <a href="#">เรื่องราวของเรา</a>
+          <a href="#">วิธีชงชา</a>
+          <a href="#">บล็อก</a>
+          <a href="#">คำถามที่พบบ่อย</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>ติดต่อ</h4>
+          <a href="#">hello@mjaytea.com</a>
+          <a href="#">02-xxx-xxxx</a>
+          <a href="#">@mjaytea</a>
+          <a href="#">กรุงเทพมหานคร</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 mjaytea. All rights reserved.</p>
+        <div>
+          <a href="#">นโยบายความเป็นส่วนตัว</a> &nbsp;·&nbsp;
+          <a href="#">เงื่อนไขการใช้บริการ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script src="script.js"></script>
+</body>
+</html>
