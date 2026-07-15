@@ -205,11 +205,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = this.closest('.menu-card');
       const title = card.querySelector('h3').textContent;
       const priceText = card.querySelector('.menu-price').childNodes[0].nodeValue.trim();
-      const price = parseInt(priceText.replace('฿', ''));
+      const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
       const img = card.querySelector('img').src;
       
-      cart.push({ title, price, img });
-      updateCartUI();
+      // Get current currency symbol from the dropdown
+      const currencySelect = document.getElementById('currencySelect');
+      let currentCurrency = 'THB';
+      let symbol = '฿';
+      if(currencySelect) {
+        currentCurrency = currencySelect.value;
+        if(currentCurrency === 'USD') symbol = '$';
+        else if(currentCurrency === 'EUR') symbol = '€';
+        else if(currentCurrency === 'JPY') symbol = '¥';
+      }
+      
+      cart.push({ title, price, img, symbol });
+      updateCartUI(symbol);
       
       if(cart.length === 1) {
         setTimeout(openCart, 800);
@@ -243,13 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cartClose) cartClose.addEventListener('click', closeCart);
   if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
   
-  const updateCartUI = () => {
+  const updateCartUI = (currencySymbol = '฿') => {
     if(!cartBadge) return;
     cartBadge.textContent = cart.length;
     
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = '<div class="empty-cart-message">ตะกร้าสินค้าของคุณว่างเปล่า</div>';
-      cartTotalEl.textContent = '฿0';
+      cartTotalEl.textContent = currencySymbol + '0';
       checkoutBtn.disabled = true;
       return;
     }
@@ -266,23 +277,80 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="${item.img}" alt="${item.title}" class="cart-item-img">
         <div class="cart-item-info">
           <div class="cart-item-title">${item.title}</div>
-          <div class="cart-item-price">฿${item.price}</div>
+          <div class="cart-item-price">${currencySymbol}${item.price.toFixed(2).replace('.00', '')}</div>
         </div>
         <button class="cart-item-remove" data-index="${index}">&times;</button>
       `;
       cartItemsContainer.appendChild(cartItemEl);
     });
     
-    cartTotalEl.textContent = '฿' + total;
+    cartTotalEl.textContent = currencySymbol + total.toFixed(2).replace('.00', '');
     
     document.querySelectorAll('.cart-item-remove').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const idx = e.target.getAttribute('data-index');
         cart.splice(idx, 1);
-        updateCartUI();
+        updateCartUI(currencySymbol);
       });
     });
   };
+
+  // -------- Currency API Integration --------
+  const currencySelect = document.getElementById('currencySelect');
+  const priceElements = document.querySelectorAll('.menu-price');
+  
+  const basePrices = [];
+  priceElements.forEach(el => {
+    const textNode = el.childNodes[0].nodeValue;
+    const priceStr = textNode.replace(/[^0-9.]/g, '');
+    basePrices.push(parseFloat(priceStr));
+  });
+
+  let exchangeRates = null;
+
+  fetch('https://api.exchangerate-api.com/v4/latest/THB')
+    .then(res => res.json())
+    .then(data => {
+      exchangeRates = data.rates;
+    })
+    .catch(err => console.error("Currency API Error:", err));
+
+  if (currencySelect) {
+    currencySelect.addEventListener('change', (e) => {
+      const targetCurrency = e.target.value;
+      if (!exchangeRates) return;
+      
+      const rate = exchangeRates[targetCurrency];
+      
+      let symbol = '';
+      if(targetCurrency === 'THB') symbol = '฿';
+      else if(targetCurrency === 'USD') symbol = '$';
+      else if(targetCurrency === 'EUR') symbol = '€';
+      else if(targetCurrency === 'JPY') symbol = '¥';
+      else symbol = targetCurrency + ' ';
+
+      priceElements.forEach((el, index) => {
+        const basePrice = basePrices[index];
+        const converted = basePrice * rate;
+        
+        let formattedPrice = '';
+        if (targetCurrency === 'JPY' || targetCurrency === 'THB') {
+          formattedPrice = Math.round(converted);
+        } else {
+          formattedPrice = converted.toFixed(2);
+        }
+        
+        const smallTag = el.querySelector('small');
+        el.innerHTML = `${symbol}${formattedPrice} ${smallTag ? smallTag.outerHTML : ''}`;
+      });
+      
+      // Clear cart when currency changes to avoid mixed currency calculations
+      if (cart.length > 0) {
+        cart = [];
+        updateCartUI(symbol);
+      }
+    });
+  }
 
   // -------- 3D Tilt Effect --------
   const tiltCards = document.querySelectorAll('.menu-card, .feature-card, .blog-card');
