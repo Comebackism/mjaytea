@@ -34,11 +34,17 @@
         <li><a href="#contact" class="nav-cta">ติดต่อเรา</a></li>
       </ul>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="cart-toggle" id="cartToggle" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -326,6 +332,26 @@
     </div>
   </section>
 
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <span class="section-label reveal">แกลลอรี่ของเรา</span>
+        <h2 class="section-title reveal">บรรยากาศร้าน & ชาของเรา</h2>
+        <p class="section-desc reveal">
+          ติดตามเราบน Instagram @mjaytea เพื่ออัปเดตเรื่องราวและชาใหม่ๆ 
+        </p>
+      </div>
+      
+      <div class="gallery-grid reveal reveal-delay-2">
+        <div class="gallery-item"><img src="images/hero-tea.png" alt="Gallery 1" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/about-tea.png" alt="Gallery 2" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tea-collection.png" alt="Gallery 3" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/tea-shop.png" alt="Gallery 4" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== TESTIMONIALS ========== -->
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -383,8 +409,158 @@
     </div>
   </section>
 
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <span class="section-label reveal">มีข้อสงสัย?</span>
+        <h2 class="section-title reveal">คำถามที่พบบ่อย</h2>
+      </div>
+      
+      <div class="faq-list reveal reveal-delay-1">
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>มีบริการจัดส่งฟรีไหม?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>เรามีบริการจัดส่งฟรีทั่วประเทศเมื่อสั่งซื้อครบ 500 บาทขึ้นไปครับ</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>ควรเก็บรักษาใบชาอย่างไร?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ควรเก็บในที่แห้งและเย็น หลีกเลี่ยงแสงแดด และปิดถุงหรือกล่องให้สนิทหลังใช้งานครับ</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>ชาตัวไหนเหมาะสำหรับคนเพิ่งเริ่มดื่ม?</h3>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>เราขอแนะนำ ชาเขียวมะลิ หรือ เอิร์ลเกรย์สเปเชียล ครับ เพราะดื่มง่ายและมีกลิ่นหอมผ่อนคลาย</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG ========== -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="blog-header">
+        <span class="section-label reveal">บทความ</span>
+        <h2 class="section-title reveal">เรื่องราวและเคล็ดลับจากเรา</h2>
+      </div>
+      
+      <div class="blog-grid">
+        <article class="blog-card reveal reveal-delay-1">
+          <div class="blog-img">
+            <img src="images/about-tea.png" alt="Tea brewing tips" loading="lazy">
+            <span class="blog-category">เคล็ดลับ</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">15 ก.ค. 2026</span>
+            <h3>วิธีชงชาเขียวให้อร่อยและได้ประโยชน์สูงสุด</h3>
+            <p>เรียนรู้วิธีการชงชาเขียวให้มีรสชาติกลมกล่อม ไม่ขม และยังคงคุณค่าทางสารอาหารไว้อย่างครบถ้วน</p>
+            <a href="#" class="blog-link">อ่านต่อ &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-delay-2">
+          <div class="blog-img">
+            <img src="images/hero-tea.png" alt="Health benefits of tea" loading="lazy">
+            <span class="blog-category">สุขภาพ</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">10 ก.ค. 2026</span>
+            <h3>5 ประโยชน์ที่น่าทึ่งของการดื่มชาอู่หลงเป็นประจำ</h3>
+            <p>ชาอู่หลงไม่ได้มีดีแค่กลิ่นหอม แต่ยังเต็มเปี่ยมไปด้วยสารต้านอนุมูลอิสระที่ช่วยให้ร่างกายแข็งแรง</p>
+            <a href="#" class="blog-link">อ่านต่อ &rarr;</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal reveal-delay-3">
+          <div class="blog-img">
+            <img src="images/tea-collection.png" alt="Pu-erh tea introduction" loading="lazy">
+            <span class="blog-category">ความรู้เรื่องชา</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">5 ก.ค. 2026</span>
+            <h3>ทำความรู้จักชาผู่เอ๋อร์ ยิ่งเก่ายิ่งมีราคา</h3>
+            <p>เปิดโลกชาบ่มที่ได้รับความนิยมอย่างมากในหมู่ผู้รักชา พร้อมวิธีเลือกซื้อสำหรับมือใหม่</p>
+            <a href="#" class="blog-link">อ่านต่อ &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-label">ติดต่อเรา</span>
+          <h2 class="section-title">แวะมาทักทายเราได้เสมอ</h2>
+          <p class="section-desc">
+            มีคำถามหรือข้อเสนอแนะ? หรืออยากให้เราแนะนำชาที่เหมาะกับคุณ? ติดต่อเราผ่านช่องทางด้านล่างได้เลย
+          </p>
+          
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="cd-icon">📍</div>
+              <div class="cd-text">
+                <h4>ที่อยู่</h4>
+                <p>123 ถนนสุขุมวิท กรุงเทพมหานคร 10110</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="cd-icon">📞</div>
+              <div class="cd-text">
+                <h4>เบอร์โทรศัพท์</h4>
+                <p>02-XXX-XXXX</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="cd-icon">🕒</div>
+              <div class="cd-text">
+                <h4>เวลาทำการ</h4>
+                <p>ทุกวัน 09:00 น. - 20:00 น.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-wrapper reveal reveal-delay-2">
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">ชื่อของคุณ</label>
+              <input type="text" id="name" placeholder="ชื่อ-นามสกุล" required>
+            </div>
+            <div class="form-group">
+              <label for="email">อีเมล</label>
+              <input type="email" id="email" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">ข้อความ</label>
+              <textarea id="message" rows="4" placeholder="พิมพ์ข้อความของคุณที่นี่..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              ส่งข้อความ
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CTA ========== -->
-  <section class="cta-section" id="contact">
+  <section class="cta-section" id="subscribe">
     <div class="cta-content">
       <span class="section-label reveal">พร้อมแล้วหรือยัง?</span>
       <h2 class="reveal">เริ่มต้นประสบการณ์<br>ชาพรีเมียม วันนี้</h2>
@@ -457,6 +633,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========== CART SIDEBAR ========== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>ตะกร้าสินค้า</h2>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart-message">ตะกร้าสินค้าของคุณว่างเปล่า</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>ยอดรวมทั้งหมด</span>
+        <span id="cartTotal">฿0</span>
+      </div>
+      <button class="btn btn-primary w-100" id="checkoutBtn" disabled>สั่งซื้อสินค้า</button>
+    </div>
+  </div>
 
   <!-- ========== JAVASCRIPT ========== -->
   <script src="script.js"></script>

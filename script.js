@@ -200,6 +200,139 @@ document.addEventListener('DOMContentLoaded', () => {
         this.style.color = '';
         this.style.transform = '';
       }, 1200);
+      
+      // Add to cart logic
+      const card = this.closest('.menu-card');
+      const title = card.querySelector('h3').textContent;
+      const priceText = card.querySelector('.menu-price').childNodes[0].nodeValue.trim();
+      const price = parseInt(priceText.replace('฿', ''));
+      const img = card.querySelector('img').src;
+      
+      cart.push({ title, price, img });
+      updateCartUI();
+      
+      if(cart.length === 1) {
+        setTimeout(openCart, 800);
+      }
+    });
+  });
+
+  // -------- Cart UI Logic --------
+  const cartToggle = document.getElementById('cartToggle');
+  const cartClose = document.getElementById('cartClose');
+  const cartSidebar = document.getElementById('cartSidebar');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartBadge = document.getElementById('cartBadge');
+  const cartItemsContainer = document.getElementById('cartItems');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  
+  let cart = [];
+  
+  const openCart = () => {
+    if(cartSidebar) cartSidebar.classList.add('open');
+    if(cartOverlay) cartOverlay.classList.add('open');
+  };
+  
+  const closeCart = () => {
+    if(cartSidebar) cartSidebar.classList.remove('open');
+    if(cartOverlay) cartOverlay.classList.remove('open');
+  };
+  
+  if (cartToggle) cartToggle.addEventListener('click', openCart);
+  if (cartClose) cartClose.addEventListener('click', closeCart);
+  if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+  
+  const updateCartUI = () => {
+    if(!cartBadge) return;
+    cartBadge.textContent = cart.length;
+    
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<div class="empty-cart-message">ตะกร้าสินค้าของคุณว่างเปล่า</div>';
+      cartTotalEl.textContent = '฿0';
+      checkoutBtn.disabled = true;
+      return;
+    }
+    
+    checkoutBtn.disabled = false;
+    let total = 0;
+    cartItemsContainer.innerHTML = '';
+    
+    cart.forEach((item, index) => {
+      total += item.price;
+      const cartItemEl = document.createElement('div');
+      cartItemEl.className = 'cart-item';
+      cartItemEl.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" class="cart-item-img">
+        <div class="cart-item-info">
+          <div class="cart-item-title">${item.title}</div>
+          <div class="cart-item-price">฿${item.price}</div>
+        </div>
+        <button class="cart-item-remove" data-index="${index}">&times;</button>
+      `;
+      cartItemsContainer.appendChild(cartItemEl);
+    });
+    
+    cartTotalEl.textContent = '฿' + total;
+    
+    document.querySelectorAll('.cart-item-remove').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = e.target.getAttribute('data-index');
+        cart.splice(idx, 1);
+        updateCartUI();
+      });
+    });
+  };
+
+  // -------- 3D Tilt Effect --------
+  const tiltCards = document.querySelectorAll('.menu-card, .feature-card, .blog-card');
+  
+  tiltCards.forEach(card => {
+    card.classList.add('tilt-effect');
+    
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -10; 
+      const rotateY = ((x - centerX) / centerX) * 10;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+      card.style.transition = 'transform 0.5s ease, box-shadow 0.4s ease, border-color 0.4s ease';
+    });
+    
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'none';
+    });
+  });
+
+  // -------- FAQ Accordion --------
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const parent = question.parentElement;
+      const answer = question.nextElementSibling;
+      const isActive = parent.classList.contains('active');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        const ans = item.querySelector('.faq-answer');
+        if (ans) ans.style.maxHeight = null;
+      });
+      
+      if (!isActive) {
+        parent.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
     });
   });
 
